@@ -28,7 +28,7 @@ La contraseña `sa` del compose es solo para uso local de práctica.
 - **Cargas:** bronze 60,398 ventas; silver y gold conservan las 60,398. `crm_cust_info` pasa de 18,493 a 18,484 filas en silver (se eliminan duplicados).
 - **Claves:** sin duplicados ni nulos en `cst_id`, `customer_key` y `product_key`.
 - **Integridad:** ninguna venta sin cliente ni producto; `sales_amount = quantity * price` en todas las filas; ninguna fecha de envío anterior a la de orden.
-- **Observación:** `Q07_ventas_por_pais` muestra que el campo `country` llega sin normalizar a gold (`US`, `USA` y `United States` por separado; `DE` y `Germany`; y un grupo de países vacíos). No es un error de la carga: es un punto de limpieza pendiente en la capa silver del proyecto original.
+- **Observación:** `Q07_ventas_por_pais` muestra que el campo `country` llega sin normalizar a gold (`US`, `USA` y `United States` por separado; `DE` y `Germany`; y un grupo de países vacíos). Lo cual es un punto de limpieza pendiente en la capa silver del proyecto original.
 
 ## Capturas
 
