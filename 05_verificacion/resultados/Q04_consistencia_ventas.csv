@@ -1,0 +1,4 @@
+revision,filas
+ventas con sales_amount <> quantity * price,0
+ventas con fecha de envio anterior a la de orden,0
+ventas con valores nulos o negativos,0

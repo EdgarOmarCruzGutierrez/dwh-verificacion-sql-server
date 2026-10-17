@@ -1,0 +1,16 @@
+# SQL Server 2022 aislado para verificar el Data Warehouse (bronze/silver/gold).
+# Usa el puerto 1434 del host para no chocar con otro SQL Server en 1433.
+services:
+  sql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    container_name: sql-dwh-verificacion
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "SqlServer!2026"
+    ports:
+      - "1434:1433"
+    volumes:
+      - sql-dwh-verificacion-data:/var/opt/mssql
+volumes:
+  sql-dwh-verificacion-data:

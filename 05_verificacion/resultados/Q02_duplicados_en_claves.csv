@@ -1,0 +1,4 @@
+clave,duplicados,nulos
+silver.crm_cust_info.cst_id,0,0
+gold.dim_customers.customer_key,0,0
+gold.dim_products.product_key,0,0
