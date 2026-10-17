@@ -1,5 +1,22 @@
 **Equipo:** Cruz Gutiérrez Edgar Omar y Rodriguez Muñoz Salma Annette
 
+
+Este repositorio es parte de la Práctica 8 de la materia en Minería de Datos de la Licenciatura de Ciencia de Datos de la UNAM.
+
+Objetivo:
+
+Seguir el proceso de creación de un DataWarehouse desde cero con ayuda de la Arquitectura Medallion en SQLServer. 
+
+Resultados:
+
+La carpeta 05_verificacion reúne todo lo necesario para levantar el warehouse en un contenedor y comprobar que quedó bien cargado. Empieza con un README.md que explica cómo reproducir el proceso, resume los resultados y muestra las capturas. El docker-compose.yml de la subcarpeta docker define el SQL Server 2022 que usé, en un contenedor llamado sql-dwh-verificacion y expuesto en el puerto 1434. En sql/consultas_verificacion.sql están las ocho consultas, y el script ejecutar.sh las corre contra el contenedor y guarda el resultado de cada una en un CSV dentro de resultados.
+
+Las cuatro primeras consultas son comprobaciones de calidad. Cuentan las filas de cada tabla en las tres capas, buscan duplicados y nulos en las claves, revisan que ninguna venta quede sin cliente o sin producto, y confirman que el importe de cada venta sea igual a cantidad por precio y que ninguna fecha de envío sea anterior a la del pedido. Las otras cuatro son consultas de negocio sobre la capa gold: ventas por año, por categoría y por país, y los diez clientes que más compraron. Esa última sirve de apoyo para ver que el modelo responde preguntas reales, y la de países es la que deja ver que ese campo llega sin normalizar.
+
+Por último, la subcarpeta capturas guarda cuatro imágenes con la evidencia del proceso: el servidor corriendo en Docker, la carga de las capas bronze y silver, la salida de las comprobaciones de calidad y el resultado de las consultas de negocio.
+
+
+
 # Proyecto de Data Warehouse y Analítica
 
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@datawithbaraa) [![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=for-the-badge&logo=udemy&logoColor=white)](https://www.udemy.com/course/building-a-modern-data-warehouse-data-engineering-bootcamp/) [![Website](https://img.shields.io/badge/datawithbaraa.com-111111?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.datawithbaraa.com) [![License](https://img.shields.io/github/license/DataWithBaraa/sql-data-warehouse-project?style=for-the-badge&color=2EA043)](LICENSE) [![Stars](https://img.shields.io/github/stars/DataWithBaraa/sql-data-warehouse-project?style=for-the-badge&color=F5B301)](https://github.com/DataWithBaraa/sql-data-warehouse-project)
